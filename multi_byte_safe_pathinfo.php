@@ -9,6 +9,7 @@
    * @param string $concat  - optionally specify any string (filename) to append at the end.
    *
    * @return string|array   - a break-down to path-like component (entire segments, or just one of them).
+   * @link   https://github.com/eladkarako/PHP-Snippets/blob/master/multi_byte_safe_pathinfo.php
    * @author Elad Karako (icompile.eladkarako.com)
    */
   function mb_pathinfo($path = __FILE__, $segment = 'all', $concat = '') {
@@ -59,4 +60,9 @@
    *   [dot_extension] => .php
    *   [extension] => php
    *  )
+   */
+
+  var_dump(mb_pathinfo(__FILE__, 'path', 'raw_html_processing.php'));
+  /* sample output:
+   *  string(43) "C:\WTNMP\WWW\mbpath\raw_html_processing.php"
    */
